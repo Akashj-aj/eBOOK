@@ -1,0 +1,73 @@
+/* Basic Styles */
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  #book-info {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* PDF Viewer */
+  #pdf-viewer-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  #pdf-book {
+    position: relative;
+    max-width: 100%;
+    display: inline-block;
+  }
+  
+  #pdf-canvas {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .navigation {
+    margin-top: 10px;
+  }
+  
+  #download-btn {
+    background-color: #28a745;
+  }
+  
+  #download-btn:hover {
+    background-color: #218838;
+  }
+  
+  #close-viewer-btn {
+    background-color: #dc3545;
+    margin-left: 10px;
+  }
+  
+  #close-viewer-btn:hover {
+    background-color: #c82333;
+  }
+  
+  button:disabled {
+    background-color: #6c757d;
+  }
+  
+  input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Detail</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>eBook Library - Book Detail</h1>
+    <nav>
+      <a href="index.html">Home</a>
+    </nav>
+  </header>
+
+  <section id="book-detail">
+    <h2 id="book-title"></h2>
+    <img id="book-cover" alt="Book cover" width="100"/>
+    <p id="book-author"></p>
+    <p id="book-description"></p>
+    <a id="book-read-link" href="#">Read online</a> <!-- Updated Read Link -->
+    <a id="download-btn" href="#" style="padding: 0.5rem 1rem; background: green; color: white; border: none; border-radius: 4px; text-decoration: none;">Download</a>
+
+
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="js/supabaseClient.js"></script>
+  <script src="js/book.js"></script>
+</body>
+</html>

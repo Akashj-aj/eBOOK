@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>eBook Library</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Welcome to eBook Library</h1>
+    <nav>
+      <!-- Upload link shown via JS if admin is logged in -->
+      <span id="upload-link" style="display: none;">
+        <a href="upload.html">Upload Book</a>
+      </span>
+      <a href="welcome.html" id="logout-button">Logout</a>
+    </nav>
+  </header>
+
+  <section id="book-list">
+    <h2>Available eBooks</h2>
+    <input 
+    type="text" 
+    id="search-input" 
+    placeholder="Search by title or author..." 
+    style="padding: 0.5rem; width: 100%; max-width: 400px; margin-bottom: 1rem;"/>
+    <div id="books"></div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script src="js/supabaseClient.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
