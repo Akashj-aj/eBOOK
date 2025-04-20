@@ -17,6 +17,8 @@ if (!bookId) {
       return;
     }
 
+    console.log("Book data fetched:", data);
+
     document.getElementById('book-title').textContent = data.title;
     document.getElementById('prev-book-link').href = `book.html?bookId=${bookId}`;
     
@@ -37,6 +39,7 @@ const scale = 1.5,
       ctx = canvas.getContext('2d');
 
 function renderPage(num) {
+  console.log("Rendering page:", num);
   pageIsRendering = true;
 
   pdfDoc.getPage(num).then(page => {
@@ -59,6 +62,8 @@ function renderPage(num) {
     });
 
     document.getElementById('page-num').textContent = num;
+  }).catch(err => {
+    console.error("Error rendering page:", err);
   });
 }
 
@@ -85,16 +90,30 @@ function showNextPage() {
 document.getElementById('prev-page').addEventListener('click', showPrevPage);
 document.getElementById('next-page').addEventListener('click', showNextPage);
 
-function loadPdf(pdfUrl) {
-  const loadingTask = pdfjsLib.getDocument(pdfUrl);
-  loadingTask.promise.then(pdf => {
-    pdfDoc = pdf;
-    document.getElementById('page-count').textContent = pdf.numPages;
-    renderPage(pageNum);
-  }).catch(err => {
-    console.error('Error loading PDF:', err.message);
-  });
+async function loadPdf(pdfUrl) {
+  console.log("Loading PDF from URL:", pdfUrl);
+  try {
+    const response = await fetch(pdfUrl);
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    const blob = await response.blob();
+    const blobUrl = URL.createObjectURL(blob);
+
+    const loadingTask = pdfjsLib.getDocument(blobUrl);
+    loadingTask.promise.then(pdf => {
+      pdfDoc = pdf;
+      console.log("PDF loaded, number of pages:", pdf.numPages);
+      document.getElementById('page-count').textContent = pdf.numPages;
+      renderPage(pageNum);
+    }).catch(err => {
+      console.error('Error loading PDF:', err.message);
+    });
+  } catch (error) {
+    console.error('Error fetching PDF:', error);
+  }
 }
+
 document.getElementById('jump-btn').addEventListener('click', () => {
   const input = document.getElementById('jump-to-page');
   const page = parseInt(input.value, 10);

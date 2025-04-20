@@ -8,24 +8,33 @@
 </head>
 <body>
   <header>
-    <h1>Upload a New eBook</h1>
+    <nav class="navbar container">
+      <a href="index.html" class="nav-logo">eBook Library</a>
+      <div class="nav-links">
+        <a href="upload.html" class="nav-item">Upload Book</a>
+        <a href="welcome.html" id="logout-button" class="nav-item">Logout</a>
+      </div>
+    </nav>
+    <HR>
   </header>
 
-  <section id="upload-form">
-    <form id="book-upload-form">
-      <label for="title">Book Title:</label>
-      <input type="text" id="title" required />
-      <label for="author">Author:</label>
-      <input type="text" id="author" required />
-      <label for="description">Description:</label>
-      <textarea id="description"></textarea>
-      <label for="cover">Cover Image (JPG):</label>
-      <input type="file" id="cover" accept="image/jpeg" required />
-      <label for="pdf">PDF File:</label>
-      <input type="file" id="pdf" accept="application/pdf" required />
-      <button type="submit">Upload</button>
-    </form>
-  </section>
+  <main class="container">
+    <section id="upload-form">
+      <form id="book-upload-form" novalidate>
+        <label for="title">Book Title:</label>
+        <input type="text" id="title" required />
+        <label for="author">Author:</label>
+        <input type="text" id="author" required />
+        <label for="description">Description:</label>
+        <textarea id="description"></textarea>
+        <label for="cover">Cover Image (JPG):</label>
+        <input type="file" id="cover" accept="image/jpeg" required />
+        <label for="pdf">PDF File:</label>
+        <input type="file" id="pdf" accept="application/pdf" required />
+        <button type="submit" class="btn">Upload</button>
+      </form>
+    </section>
+  </main>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
   <script src="js/supabaseClient.js"></script>

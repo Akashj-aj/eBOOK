@@ -8,22 +8,28 @@
 </head>
 <body>
   <header>
-    <h1>eBook Library - Book Detail</h1>
-    <nav>
-      <a href="index.html">Home</a>
+    <nav class="navbar container">
+      <a href="index.html" class="nav-logo">eBook Library</a>
+      <div class="nav-links">
+        <a href="upload.html" class="nav-item"><B>UPLOAD BOOK</B></a>
+        <a href="welcome.html" id="logout-button" class="nav-item"><B>LOGOUT</B></a>
+      </div>
     </nav>
+    <HR>
   </header>
 
-  <section id="book-detail">
-    <h2 id="book-title"></h2>
-    <img id="book-cover" alt="Book cover" width="100"/>
-    <p id="book-author"></p>
-    <p id="book-description"></p>
-    <a id="book-read-link" href="#">Read online</a> <!-- Updated Read Link -->
-    <a id="download-btn" href="#" style="padding: 0.5rem 1rem; background: green; color: white; border: none; border-radius: 4px; text-decoration: none;">Download</a>
-
-
-  </section>
+  <main class="container">
+    <center>
+    <section id="book-detail">
+      <h2 id="book-title"></h2>
+      <img id="book-cover" alt="Book cover" />
+      <p id="book-author"></p>
+      <p id="book-description"></p>
+      <a id="book-read-link" href="#" class="btn">Read online</a>
+      <a id="download-btn" href="#" class="btn btn-download">Download</a>
+    </section>
+  </center>
+  </main>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
   <script src="js/supabaseClient.js"></script>

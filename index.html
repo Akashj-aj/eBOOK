@@ -5,28 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>eBook Library</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body>
   <header>
-    <h1>Welcome to eBook Library</h1>
-    <nav>
-      <!-- Upload link shown via JS if admin is logged in -->
-      <span id="upload-link" style="display: none;">
-        <a href="upload.html">Upload Book</a>
-      </span>
-      <a href="welcome.html" id="logout-button">Logout</a>
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo">eBook Library</a>
+      <div class="nav-links">
+        <span id="upload-link" style="display: none;">
+          <a href="upload.html" class="nav-item"></span><b>UPLOAD BOOK</b></a>
+        </span>
+        <a href="welcome.html" id="logout-button" class="nav-item" style="display:none;"></span><B>LOGOUT</B></a>
+        <a href="login.html" id="login-link" class="nav-item"><span class="material-icons">login</span>Login</a>
+        <a href="signup.html" id="signup-link" class="nav-item"><span class="material-icons">person_add</span>Sign Up</a>
+      </div>
     </nav>
+    <HR>
   </header>
 
-  <section id="book-list">
-    <h2>Available eBooks</h2>
-    <input 
-    type="text" 
-    id="search-input" 
-    placeholder="Search by title or author..." 
-    style="padding: 0.5rem; width: 100%; max-width: 400px; margin-bottom: 1rem;"/>
-    <div id="books"></div>
-  </section>
+  <main class="container">
+    <section id="book-list">
+      <h2>Available eBooks</h2>
+      <input 
+        type="text" 
+        id="search-input" 
+        placeholder="Search by title or author..." 
+        class="search-input"
+      />
+      <div id="books"></div>
+    </section>
+  </main>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
   <script src="js/supabaseClient.js"></script>

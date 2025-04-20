@@ -7,20 +7,34 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <h2>Create an Account</h2>
-  <form id="signup-form">
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
+  <header>
+    <nav class="navbar container">
+      <a href="index.html" class="nav-logo">eBook Library</a>
+      <div class="nav-links">
+        <a href="upload.html" class="nav-item">Upload Book</a>
+        <a href="welcome.html" id="logout-button" class="nav-item">Logout</a>
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
+      </div>
+    </nav>
+    <HR>
+  </header>
 
-    <button type="submit">Sign Up</button>
-  </form>
+  <main class="container">
+    <h2>Create an Account</h2>
+    <form id="signup-form" novalidate>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
 
-  <div id="error-message" style="color: red;"></div>
-  
-  <p>Already have an account? <a href="login.html">Login here</a></p>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit" class="btn">Sign Up</button>
+    </form>
+
+    <div id="error-message" class="error-message" aria-live="polite" style="color: red;"></div>
+    
+    <p>Already have an account? <a href="login.html">Login here</a></p>
+  </main>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
   <script src="js/supabaseClient.js"></script>

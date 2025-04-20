@@ -1,4 +1,3 @@
-
 const supabase = window.supabaseClient;
 
 const adminEmails = ['vvce23cseaiml0051@vvce.ac.in'];
@@ -12,6 +11,14 @@ async function checkUserAndInit() {
     if (adminEmails.includes(user.email)) {
       document.getElementById('upload-link').style.display = 'inline';
     }
+    document.getElementById('logout-button').style.display = 'inline';
+    document.getElementById('login-link').style.display = 'none';
+    document.getElementById('signup-link').style.display = 'none';
+  } else {
+    document.getElementById('upload-link').style.display = 'none';
+    document.getElementById('logout-button').style.display = 'none';
+    document.getElementById('login-link').style.display = 'inline';
+    document.getElementById('signup-link').style.display = 'inline';
   }
 
   await loadBooks(); // Load all books
@@ -44,17 +51,19 @@ function renderBooks(books) {
   }
 
   books.forEach(book => {
-    const bookEl = document.createElement('div');
-    bookEl.className = 'book';
-
     const coverImage = book.cover_url ? book.cover_url : 'placeholder.jpg';
 
+    const bookEl = document.createElement('a');
+    bookEl.className = 'book';
+    bookEl.href = `book.html?bookId=${book.id}`;
+    bookEl.style.textDecoration = 'none';
+    bookEl.style.color = 'inherit';
+
     bookEl.innerHTML = `
-      <img src="${coverImage}" alt="${book.title}" width="100"/>
+      <div class="book-cover">
+        <img src="${coverImage}" alt="${book.title}" />
+      </div>
       <h3>${book.title}</h3>
-      <p><strong>Author:</strong> ${book.author}</p>
-      <p>${book.description || ''}</p>
-      <a href="book.html?bookId=${book.id}">Read More</a>
     `;
 
     booksDiv.appendChild(bookEl);
@@ -74,4 +83,3 @@ function setupSearch() {
 }
 
 checkUserAndInit();
-
