@@ -12,13 +12,11 @@ async function checkUserAndInit() {
       document.getElementById('upload-link').style.display = 'inline';
     }
     document.getElementById('logout-button').style.display = 'inline';
-    document.getElementById('login-link').style.display = 'none';
-    document.getElementById('signup-link').style.display = 'none';
+  
   } else {
     document.getElementById('upload-link').style.display = 'none';
     document.getElementById('logout-button').style.display = 'none';
-    document.getElementById('login-link').style.display = 'inline';
-    document.getElementById('signup-link').style.display = 'inline';
+  
   }
 
   await loadBooks(); // Load all books
