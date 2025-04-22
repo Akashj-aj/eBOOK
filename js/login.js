@@ -24,9 +24,14 @@ async function handleLogin(email, password) {
     const result = await handleLogin(email, password);
     if (result.success) {
       alert('Login successful!');
-      window.location.href = 'index.html';  // Redirect to homepage after login
+      window.location.href = 'homepage.html'; 
     } else {
       document.getElementById('error-message').innerText = `Error: ${result.message}`;
     }
   });
-  
+
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      document.querySelector('.auth-container').classList.add('scale-in');
+    }, 200);
+  });

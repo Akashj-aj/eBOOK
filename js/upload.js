@@ -34,7 +34,7 @@ async function handleUpload(event) {
       .upload(coverPath, coverFile, { contentType: coverFile.type });
 
     if (coverError) {
-      console.error('Error uploading cover image:', coverError); // Log full error object
+      console.error('Error uploading cover image:', coverError); 
       alert('Error uploading cover image: ' + (coverError.message || JSON.stringify(coverError)));
       return;
     } else {
@@ -48,7 +48,7 @@ async function handleUpload(event) {
       .upload(pdfPath, pdfFile, { contentType: pdfFile.type });
 
     if (pdfError) {
-      console.error('Error uploading PDF:', pdfError); // Log full error object
+      console.error('Error uploading PDF:', pdfError); 
       alert('Error uploading book file: ' + (pdfError.message || JSON.stringify(pdfError)));
       return;
     } else {
@@ -87,19 +87,25 @@ async function handleUpload(event) {
     console.log('Insert response error:', dbError);
 
     if (dbError) {
-      console.error('Error saving book info:', dbError); // Log full error object for better diagnostics
+      console.error('Error saving book info:', dbError); 
       alert('Error saving book info: ' + (dbError.message || JSON.stringify(dbError)));
       return;
     }
 
     alert('Book uploaded successfully!');
-    window.location.href = 'index.html';
+    window.location.href = 'homepage.html';
 
   } catch (error) {
-    console.error('Unexpected error:', error);  // Log unexpected errors
+    console.error('Unexpected error:', error); 
     alert('Unexpected error: ' + error.message);
   }
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    document.getElementById('upload-form').classList.add('fade-in');
+  }, 200);
+});
 
 // Attach event listener to the form
 document.getElementById('book-upload-form').addEventListener('submit', handleUpload);

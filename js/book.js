@@ -2,7 +2,7 @@ const supabase = window.supabaseClient;
 
 async function loadBook() {
   const params = new URLSearchParams(window.location.search);
-  const bookId = params.get('bookId'); // Get book ID from URL
+  const bookId = params.get('bookId'); 
 
   const { data, error } = await supabase
     .from('ebooks')
@@ -25,7 +25,7 @@ async function loadBook() {
   console.log("File URL:", data.file_url);
 
   // Extract file path for Supabase signed URL
-  const fileUrl = data.file_url; // This is already the public URL
+  const fileUrl = data.file_url; 
 
   const downloadBtn = document.getElementById('download-btn');
   if (downloadBtn) {
@@ -38,20 +38,25 @@ async function loadBook() {
       e.preventDefault();  // Prevent default anchor behavior
 
       try {
-        const response = await fetch(fileUrl);  // Fetch the file from the URL
-        const blob = await response.blob();  // Convert to Blob
+        const response = await fetch(fileUrl); 
+        const blob = await response.blob();  
 
-        const link = document.createElement('a');  // Create an anchor element
-        link.href = URL.createObjectURL(blob);  // Create a URL for the Blob
-        link.download = `${data.title}.pdf`;  // Set the filename for download
-        link.click();  // Trigger the download
+        const link = document.createElement('a');  
+        link.href = URL.createObjectURL(blob);  
+        link.download = `${data.title}.pdf`;  
+        link.click();  
       } catch (error) {
         console.error('Error downloading the file:', error);
       }
     });
   }
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      document.getElementById('book-detail').classList.add('fade-in');
+    }, 100);
+  });
 
-  // If you want to use it in PDF reader/viewer
+  
   loadPdf(fileUrl);
 }
 

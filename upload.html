@@ -3,32 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Upload Book</title>
+  <title>Upload Book - Lumina Library</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1>Upload a New eBook</h1>
+    <h1>Lumina Library</h1>
+    <nav>
+      <a href="homepage.html">Home</a>
+    </nav>
   </header>
 
-  <section id="upload-form">
-    <form id="book-upload-form">
-      <label for="title">Book Title:</label>
-      <input type="text" id="title" required />
-      <label for="author">Author:</label>
-      <input type="text" id="author" required />
-      <label for="description">Description:</label>
-      <textarea id="description"></textarea>
-      <label for="cover">Cover Image (JPG):</label>
+  <section id="upload-form" class="container fade-in">
+    <h2>Upload a New Book</h2>
+    <p style="text-align: center; max-width: 600px; margin: 0 auto 2rem;">Share knowledge and stories with our community by adding to our growing collection.</p>
+    
+    <form id="book-upload-form" class="card">
+      <label for="title">Book Title</label>
+      <input type="text" id="title" required placeholder="Enter the book's title" />
+      
+      <label for="author">Author</label>
+      <input type="text" id="author" required placeholder="Enter the author's name" />
+      
+      <label for="description">Description</label>
+      <textarea id="description" rows="5" placeholder="Provide a brief description of the book"></textarea>
+      
+      <label for="cover">Cover Image (JPG only)</label>
       <input type="file" id="cover" accept="image/jpeg" required />
-      <label for="pdf">PDF File:</label>
+      
+      <label for="pdf">PDF File</label>
       <input type="file" id="pdf" accept="application/pdf" required />
-      <button type="submit">Upload</button>
+      
+      <button type="submit">Upload Book</button>
     </form>
   </section>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
   <script src="js/supabaseClient.js"></script>
   <script src="js/upload.js"></script>
+  
 </body>
 </html>

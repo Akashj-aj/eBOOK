@@ -3,24 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sign Up</title>
+  <title>SignUP - Lumina Library</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h2>Create an Account</h2>
-  <form id="signup-form">
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" required>
+  <div class="container center">
+    <div class="auth-container scale-in">
+      <h2>Sign up to Lumina Library</h2>
+      <form id="login-form">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required placeholder="Enter your email">
+        
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required placeholder="Enter your password">
 
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required>
+        <button type="submit">Signup</button>
+      </form>
 
-    <button type="submit">Sign Up</button>
-  </form>
-
-  <div id="error-message" style="color: red;"></div>
-  
-  <p>Already have an account? <a href="login.html">Login here</a></p>
+      <div id="error-message" style="color: #ff6b6b; text-align: center; margin-top: 1rem;"></div>
+      
+      <p style="text-align: center; margin-top: 1.5rem;">Already have an account? <a href="login.html" style="color: var(--gold);">Login here</a></p>
+    </div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
   <script src="js/supabaseClient.js"></script>

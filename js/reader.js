@@ -107,9 +107,14 @@ document.getElementById('jump-btn').addEventListener('click', () => {
   }
 });
 
-// Handle ENTER key inside input box
 document.getElementById('jump-to-page').addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {
     document.getElementById('jump-btn').click();
   }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    document.getElementById('book-reader').classList.add('fade-in');
+  }, 200);
 });

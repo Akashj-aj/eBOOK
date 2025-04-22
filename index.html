@@ -1,35 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>eBook Library</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Lumina Library</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Welcome to eBook Library</h1>
-    <nav>
-      <!-- Upload link shown via JS if admin is logged in -->
-      <span id="upload-link" style="display: none;">
-        <a href="upload.html">Upload Book</a>
-      </span>
-      <a href="welcome.html" id="logout-button">Logout</a>
-    </nav>
-  </header>
+  <div class="container center">
+    <div class="fade-in">
+      <h1>✨ Welcome to Lumina Library ✨</h1>
+      <p>Illuminate your mind with our collection of digital treasures. 
+        Whether you're seeking knowledge or adventure, our carefully curated selection awaits you. 
+        Join us and discover a world of literary brilliance at your fingertips.</p>
 
-  <section id="book-list">
-    <h2>Available eBooks</h2>
-    <input 
-    type="text" 
-    id="search-input" 
-    placeholder="Search by title or author..." 
-    style="padding: 0.5rem; width: 100%; max-width: 400px; margin-bottom: 1rem;"/>
-    <div id="books"></div>
-  </section>
+      <section id="about-us" class="card" style="max-width: 800px; margin: 2rem auto; padding: 2rem;">
+        <h2>Our Story</h2>
+        <p>Lumina Library was born from a passion for making knowledge accessible to everyone.
+           We believe that books are precious sources of wisdom that should be freely available to illuminate minds across the globe.</p>
+        <p>Our carefully curated collection spans countless genres - from educational materials to thrilling fiction. 
+          We've designed our platform for seamless reading, whether you prefer to immerse yourself online or download for offline enjoyment.</p>
+        <p>Join our community of book lovers and let the light of knowledge guide your journey.</p>
+      </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-  <script src="js/supabaseClient.js"></script>
-  <script src="js/index.js"></script>
+      <div class="buttons scale-in">
+        
+        <a href="login.html" class="btn">Login</a>
+        <a href="signup.html" class="btn">Sign Up</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const elements = document.querySelectorAll('.fade-in, .scale-in');
+      elements.forEach((el, index) => {
+        setTimeout(() => {
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }, 200 * index);
+      });
+    });
+  </script>
+  
 </body>
 </html>

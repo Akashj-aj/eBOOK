@@ -1,4 +1,4 @@
-const supabase = window.supabaseClient; // Import supabase
+const supabase = window.supabaseClient; 
 
 // Handle user signup
 async function handleSignUp(email, password) {
@@ -25,9 +25,15 @@ async function handleSignUp(email, password) {
     const result = await handleSignUp(email, password);
     if (result.success) {
       alert('Signup successful! Please check your email to confirm your account.');
-      window.location.href = 'login.html';  // Redirect to login page
+      window.location.href = 'login.html'; 
     } else {
       document.getElementById('error-message').innerText = `Error: ${result.message}`;
     }
+  });
+
+  document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+      document.querySelector('.auth-container').classList.add('scale-in');
+    }, 200);
   });
   
