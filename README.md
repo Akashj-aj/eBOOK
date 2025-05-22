@@ -77,4 +77,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ---
 
 *Happy reading and contributing!*
-````
+
