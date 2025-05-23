@@ -1,4 +1,3 @@
-
 # Lumina Library
 
 Welcome to **Lumina Library**!  
@@ -18,30 +17,20 @@ This project is a modern, user-friendly eBook management platform, designed to s
 
 ## Getting Started
 
-### Prerequisites
+### Quick Start
 
-- [Git](https://git-scm.com/)
-- [Node.js](https://nodejs.org/) and npm (if running locally)
-- Any additional dependencies as specified in the project
+No installation or build steps are required!
 
-### Local Setup
-
-1. **Clone the repository**
+1. Download or clone this repository:
    ```bash
    git clone https://github.com/Akashj-aj/eBOOK.git
    cd eBOOK
    ```
+2. Open the `index.html` file in your preferred web browser.
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+That’s it! The application will run locally in your browser.
 
-3. **Start the development server**
-   ```bash
-   npm start
-   ```
-   The app should now be running at [http://localhost:3000](http://localhost:3000) (or as specified in your config).
+> **Note:** You do not need to run `npm start` or install Node.js. This is a static project built with HTML, CSS, and JavaScript.
 
 ## Deployment
 
@@ -51,8 +40,8 @@ This application is deployed on Netlify for easy access:
 To deploy your own version:
 
 1. Push your changes to GitHub.
-2. Connect your GitHub repo to Netlify.
-3. Set the build command (e.g. `npm run build`) and publish directory (e.g. `build/`).
+2. Connect your GitHub repo to Netlify (or any static hosting provider).
+3. Set the publish directory to the project root.
 4. Trigger a deploy!
 
 ## Contributing
@@ -77,4 +66,3 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ---
 
 *Happy reading and contributing!*
-
